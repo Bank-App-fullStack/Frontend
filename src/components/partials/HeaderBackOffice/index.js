@@ -12,7 +12,7 @@ const Index = () => {
                 </Link>
                 <div className="p-5">
                     <Link
-                        href="/backoffice/users"
+                        href="/account/users"
                         className="text-md font-normal leading-6 text-base hover:text-slate-500"
                     >
                         <li className="flex mb-4">
@@ -27,7 +27,7 @@ const Index = () => {
                         </li>
                     </Link>
                     <Link
-                        href="/backoffice/products"
+                        href="/account/products"
                         className="text-md font-normal leading-6 text-base hover:text-slate-500"
                     >
                         <li className="flex items-center">
@@ -44,7 +44,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-end h-full">
                     <Link
-                        href="/backoffice"
+                        href="/account"
                         className="text-md font-normal leading-6 text-base hover:text-slate-500"
                     >
                         <li className="flex items-center p-5">

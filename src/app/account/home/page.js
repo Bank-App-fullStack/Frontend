@@ -28,8 +28,8 @@ const BackOfficeHome = () => {
 
     return (
         <div className="container mx-auto bg-gray-100 h-screen">
-            <TitlePage title="MyStore - BackOffice" />
-            <h2 className="text-2xl">BackOffice</h2>
+            <TitlePage title=" Paris PFS Bank" />
+            <h2 className="text-2xl">Home Page</h2>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 "use client";
 // import Header from "@/components/partials/Header";
-// import HeaderBackoffice from "@/components/partials/HeaderBackOffice";
+import HeaderBackoffice from "@/components/partials/HeaderBackOffice";
 // import Footer from "@/components/partials/Footer";
 import "@/assets/styles/style.scss";
 import { usePathname } from "next/navigation";
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
                 <body
                     className={`${dm_serif_display.className} ${work_sans.className} flex`}
                 >
-                    {/* <HeaderBackoffice className="w-1/6" /> */}
+                    <HeaderBackoffice className="w-1/6" />
                     <main className="w-5/6">{children}</main>
                 </body>
             ) : (
