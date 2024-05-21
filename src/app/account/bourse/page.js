@@ -2,7 +2,7 @@
 
 import TitlePage from "@/components/UI/TitlePage";
 import { useEffect, useState } from "react";
-import ProductTable from "@/components/UI/Table";
+import BourseTable from "@/components/UI/Table";
 import useFetch from "@/hooks/useFetch";
 
 const ProductBackOffice = () => {
@@ -21,17 +21,7 @@ const ProductBackOffice = () => {
         }
     }, [data]);
 
-    const confirmDelete = (itemId) => {
-        if (window.confirm("Êtes-vous sûr de vouloir supprimer cet élément ?")) {
-            handleDeleteProduct(itemId);
-        }
-    };
     
-
-    
-
-    
-
     useEffect(() => {
         fetchData();
     }, []);
@@ -48,10 +38,9 @@ const ProductBackOffice = () => {
             )}
             <div className="min-h-screen">
                 <div className="mb-8">
-                    <ProductTable
+                    <BourseTable
                         data={data}
-                        type="product"
-                        handleDelete={(id) => confirmDelete(id)}
+                        type="bourse"
                     />
                 </div>
             </div>

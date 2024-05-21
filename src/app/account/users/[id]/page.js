@@ -7,23 +7,29 @@ import Button from "@/components/UI/Button";
 import { useParams } from "next/navigation";
 import Input from "@/components/UI/Input";
 import { useEffect, useState } from "react";
+import { CookiesProvider, useCookies } from 'react-cookie'
 
 const UserDetailPage = () => {
     const params = useParams();
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const [cookies, setCookie, removeCookie] = useCookies(['userToken']);
+
+    const token = cookies.userToken;
+
 
     useEffect(() => {
         const fetchUser = async () => {
             setLoading(true);
             try {
+
                 let response = await getUser(params.id);
 
                 if (response) {
                     setUser(response.results);
                 }
             } catch (err) {
-                setError(err);
+                console.log(err)
             } finally {
                 setLoading(false);
             }
@@ -39,9 +45,6 @@ const UserDetailPage = () => {
 
     const handleUpdate = async (id) => {
         try {
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Mzc5YTYyZmIzMDM5NWI0Y2RlMjM4YSIsImFkbWluIjp0cnVlLCJpYXQiOjE3MTU3NTk4MzksImV4cCI6MTc0NzI5NTgzOX0.lTWBR23IV-VjqPjP6fN2tSEs1y3WPi0i2v_A42PTqms"
-            console.log(id)
-            console.log(user)
             await fetch(
                 `${process.env.NEXT_PUBLIC_API_ENDPOINT}/users/${id}`,
                 {
