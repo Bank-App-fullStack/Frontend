@@ -7,12 +7,12 @@ const Index = () => {
             <ul className="flex flex-col h-full">
                 <Link href="/backoffice/home">
                     <li className="pt-5 pr-5 pl-5">
-                        <span className="text-2xl font-bold">BackOffice</span>
+                        <span className="text-2xl font-bold">PFS Bank</span>
                     </li>
                 </Link>
                 <div className="p-5">
                     <Link
-                        href="/backoffice/users"
+                        href="/account/user"
                         className="text-md font-normal leading-6 text-base hover:text-slate-500"
                     >
                         <li className="flex mb-4">
@@ -23,11 +23,11 @@ const Index = () => {
                                     className="h-6 w-6"
                                 />
                             </div>
-                            Users
+                            Profil
                         </li>
                     </Link>
                     <Link
-                        href="/backoffice/products"
+                        href="/account/bourse"
                         className="text-md font-normal leading-6 text-base hover:text-slate-500"
                     >
                         <li className="flex items-center">
@@ -38,13 +38,13 @@ const Index = () => {
                                     className="h-6 w-6"
                                 />
                             </div>
-                            Products
+                            Bourse
                         </li>
                     </Link>
                 </div>
                 <div className="flex items-end h-full">
                     <Link
-                        href="/backoffice"
+                        href="/account"
                         className="text-md font-normal leading-6 text-base hover:text-slate-500"
                     >
                         <li className="flex items-center p-5">
@@ -61,7 +61,7 @@ const Index = () => {
                 </div>
                 <div className="mt-auto bg-black text-white transition-colors duration-300 hover:bg-white hover:text-black hover:border-t-4 border-black hover:border-t-4 border-black">
                     <Link href="/" className="text-2xl font-semibold">
-                        <li className="p-5">My Store</li>
+                        <li className="p-5">PFS Bank</li>
                     </Link>
                 </div>
             </ul>

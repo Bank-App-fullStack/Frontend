@@ -1,7 +1,7 @@
 
 export async function login(data) {
     try {
-        const response = await fetch(`http://localhost:3030/api/auth/login`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/auth/login`, {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
