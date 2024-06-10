@@ -53,31 +53,6 @@ const Product = () => {
         console.log(e)
     };
 
-    const handleUpdate = async (id) => {
-        try {
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmM1NTJlNzE5ZTYwZTQ0Mjc3ZTI0MyIsImFkbWluIjp0cnVlLCJpYXQiOjE3MTI5MTYwNTYsImV4cCI6MTc0NDQ1MjA1Nn0.dfDN0S_-htGFENo2FhJD3Cj9CKuubl2GYsm_Me5sYDc";
-            console.log(product)
-            await fetch(
-                `${process.env.NEXT_PUBLIC_API_ENDPOINT}/products/update/${id}`,
-                {
-                    method: "POST",
-                    cache: "no-store",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                    body: JSON.stringify({
-                        "name": product.name,
-                        "description": product.description,
-                        "active": product.active,
-                        "price": product.price,
-                    })
-                }
-            );
-        } catch (error) {
-            console.error("Erreur lors de la modification du produit", error);
-        }
-    };
 
     return (
         <div className="container mx-auto bg-gray-100">

@@ -28,6 +28,10 @@ const Login = () => {
     }
   }, [token, router]);
 
+  useEffect(() => {
+    removeCookie('userToken', { path: '/' })
+    setLoggedIn(false);
+  }, []);
 
   const fetchUser = async () => {
     try {
@@ -39,6 +43,8 @@ const Login = () => {
         setToken(response.token);
         return;
       } 
+      setLoggedIn(false);
+      removeCookie('userToken', { path: '/' })
       setError(response.message);
 
     } catch (error) {
@@ -53,7 +59,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container mx-auto bg-gray-100">
+    <div className="container mx-auto bg-gray-100 h-screen">
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white p-8 rounded shadow-md w-96 xl:w-1/3">
                 <h2 className="text-2xl font-bold mb-6">Connexion</h2> 

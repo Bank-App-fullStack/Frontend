@@ -1,6 +1,5 @@
 "use client";
-// import Header from "@/components/partials/Header";
-import HeaderBackoffice from "@/components/partials/HeaderBackOffice";
+import Header from "@/components/partials/Header";
 import Footer from "@/components/partials/Footer";
 import "@/assets/styles/style.scss";
 import { usePathname } from "next/navigation";
@@ -21,11 +20,11 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang="en">
-            {pathname.includes("/account") ? (
+            {pathname.includes("/account/user") || pathname.includes("/account/bourse") || pathname.includes("/account/home") ? (
                 <body
                     className={`${dm_serif_display.className} ${work_sans.className} flex`}
                 >
-                    <HeaderBackoffice className="w-1/6" />
+                    <Header className="w-1/6" />
                     <main className="w-5/6">{children}</main>
                 </body>
             ) : (

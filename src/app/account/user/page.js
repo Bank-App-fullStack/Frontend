@@ -12,6 +12,7 @@ const UserBackOffice = () => {
     const [usersList, setUsersList] = useState(null);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const [cookies, setCookie, removeCookie] = useCookies(['userToken']);
 
@@ -45,10 +46,11 @@ const UserBackOffice = () => {
     return (
         <div className="container mx-auto bg-gray-100">
             <TitlePage title="Profil Utilisateur" />
-            <div className="min-h-screen">
-                <div className="mb-8">
-                    {loading && <p>Loading...</p>}
+                {loading && <p>Loading...</p>}
+                {error && <p>Error: {error.message}</p>}
                     {user && (
+                        <div className="min-h-screen">
+                        <div className="mb-8">
                         <div>
                             <div>
                                 <p>Identifiant du client : {user._id}</p>
@@ -72,10 +74,11 @@ const UserBackOffice = () => {
                                 </Link>
                             </div>
                         </div>
-                    )}
+                    
                     <br />
                 </div>
             </div>
+            )}
         </div>
     );
 };
